@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hertz – Book a Car Rental</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- TOP NAV -->
+  <header class="top-nav">
+    <div class="top-nav__inner">
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="#" class="logo">
+        <span class="logo-hertz">Hertz</span>
+        <span class="logo-bar"></span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#">Book a car</a>
+        <a href="#">Buy a car</a>
+        <a href="#">Manage</a>
+        <a href="#">Check-in</a>
+        <a href="#">Receipts</a>
+        <a href="#">Support</a>
+      </nav>
+      <div class="auth-btns">
+        <a href="#" class="btn-join">Join</a>
+        <a href="#" class="btn-login">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          Login
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- GOLD+ PROMO BANNER -->
+  <div class="promo-banner">
+    <span class="promo-banner__text">Your fastest way to earn status.</span>
+    <a href="#" class="promo-banner__link">Join Gold+ for free</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__left">
+      <!-- BOOKING FORM CARD -->
+      <div class="booking-card">
+        <div class="booking-tabs">
+          <button class="tab-btn active" data-tab="book">Book a car</button>
+          <button class="tab-btn" data-tab="buy">Buy a car</button>
+        </div>
+
+        <!-- Book a car tab -->
+        <div class="tab-content active" id="tab-book">
+          <h2 class="booking-title">Book your Hertz car rental</h2>
+          <form class="booking-form" id="bookingForm">
+            <div class="form-group">
+              <span class="form-icon">📍</span>
+              <input type="text" id="location" placeholder="Pickup &amp; Drop-Off Location" autocomplete="off" />
+              <div class="autocomplete-list" id="autocompleteList"></div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group half">
+                <label>Pickup Date</label>
+                <input type="date" id="pickupDate" />
+              </div>
+              <div class="form-group half">
+                <label>Pickup Time</label>
+                <select id="pickupTime">
+                  <option>12:00 PM</option>
+                  <option>12:30 PM</option>
+                  <option>1:00 PM</option>
+                  <option>1:30 PM</option>
+                  <option>2:00 PM</option>
+                  <option>3:00 PM</option>
+                  <option>4:00 PM</option>
+                  <option>5:00 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group half">
+                <label>Return Date</label>
+                <input type="date" id="returnDate" />
+              </div>
+              <div class="form-group half">
+                <label>Return Time</label>
+                <select id="returnTime">
+                  <option>12:00 PM</option>
+                  <option>12:30 PM</option>
+                  <option>1:00 PM</option>
+                  <option>2:00 PM</option>
+                  <option>3:00 PM</option>
+                  <option>4:00 PM</option>
+                  <option>5:00 PM</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="diffReturn" />
+                <span class="checkmark"></span>
+                Return to a different location
+              </label>
+            </div>
+
+            <div class="form-group" id="diffReturnGroup" style="display:none;">
+              <span class="form-icon">📍</span>
+              <input type="text" placeholder="Drop-Off Location" />
+            </div>
+
+            <div class="form-group">
+              <label>Member Discount Code (optional)</label>
+              <input type="text" id="discountCode" placeholder="Enter CDP or discount code" />
+            </div>
+
+            <button type="submit" class="btn-search">Search Cars</button>
+          </form>
+        </div>
+
+        <!-- Buy a car tab -->
+        <div class="tab-content" id="tab-buy">
+          <h2 class="booking-title">Buy a pre-owned Hertz vehicle</h2>
+          <form class="booking-form">
+            <div class="form-group">
+              <label>Search by Location</label>
+              <input type="text" placeholder="City, State or ZIP" />
+            </div>
+            <div class="form-row">
+              <div class="form-group half">
+                <label>Make / Model</label>
+                <select>
+                  <option value="">Any</option>
+                  <option>Toyota</option>
+                  <option>Ford</option>
+                  <option>Chevrolet</option>
+                  <option>Honda</option>
+                  <option>Tesla</option>
+                </select>
+              </div>
+              <div class="form-group half">
+                <label>Max Price</label>
+                <select>
+                  <option value="">Any</option>
+                  <option>$10,000</option>
+                  <option>$20,000</option>
+                  <option>$30,000</option>
+                  <option>$50,000+</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn-search">Find Vehicles</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__right">
+      <div class="hero__overlay"></div>
+      <div class="hero__text">
+        <h1>Make travel feel golden with Hertz</h1>
+        <p>New rental cars. Round trip or one-way. Let's go!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOLD+ FOOTER BAR -->
+  <div class="gold-bar">
+    <div class="gold-bar__logo">GOLD<sup>+</sup></div>
+    <div class="gold-bar__perks">
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4-4 1.41-1.41L10 13.67l6.59-6.59L18 8.5l-8 8z"/></svg> Members-only rates</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4-4 1.41-1.41L10 13.67l6.59-6.59L18 8.5l-8 8z"/></svg> Skip the line &amp; go</span>
+      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5l-4-4 1.41-1.41L10 13.67l6.59-6.59L18 8.5l-8 8z"/></svg> Earn free rental days</span>
+    </div>
+    <a href="#" class="btn-gold-join">Join in seconds</a>
+  </div>
+
+  <!-- WHY HERTZ SECTION -->
+  <section class="why-hertz">
+    <h2>Why rent with Hertz?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🚗</div>
+        <h3>Huge Fleet Selection</h3>
+        <p>From economy to luxury SUVs, find the perfect car for every trip.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <h3>Best Price Guarantee</h3>
+        <p>Find a lower price? We'll match it — no questions asked.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📍</div>
+        <h3>10,000+ Locations</h3>
+        <p>Pick up and drop off at airports, cities, and neighborhoods worldwide.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⭐</div>
+        <h3>Gold+ Rewards</h3>
+        <p>Skip the counter, earn free days, and enjoy member-only rates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR DESTINATIONS -->
+  <section class="destinations">
+    <h2>Popular Rental Destinations</h2>
+    <div class="destinations-grid">
+      <div class="dest-card">
+        <div class="dest-img" style="background:#1a1a2e;"></div>
+        <div class="dest-info"><strong>New York, NY</strong><span>From $45/day</span></div>
+      </div>
+      <div class="dest-card">
+        <div class="dest-img" style="background:#16213e;"></div>
+        <div class="dest-info"><strong>Los Angeles, CA</strong><span>From $38/day</span></div>
+      </div>
+      <div class="dest-card">
+        <div class="dest-img" style="background:#0f3460;"></div>
+        <div class="dest-info"><strong>Miami, FL</strong><span>From $42/day</span></div>
+      </div>
+      <div class="dest-card">
+        <div class="dest-img" style="background:#533483;"></div>
+        <div class="dest-info"><strong>Chicago, IL</strong><span>From $39/day</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-hertz footer-logo">Hertz</span>
+        <p>Making travel feel golden since 1918.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="#">About Hertz</a>
+        <a href="#">Careers</a>
+        <a href="#">Press Room</a>
+        <a href="#">Investor Relations</a>
+      </div>
+      <div class="footer-links">
+        <h4>Rentals</h4>
+        <a href="#">Book a Car</a>
+        <a href="#">One-Way Rentals</a>
+        <a href="#">Long-Term Rentals</a>
+        <a href="#">Electric Vehicles</a>
+      </div>
+      <div class="footer-links">
+        <h4>Support</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Manage Booking</a>
+        <a href="#">Roadside Assistance</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Hertz System, Inc. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SEARCH RESULT MODAL -->
+  <div class="modal-overlay" id="searchModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <h3>Searching for available cars…</h3>
+      <div class="modal-spinner"></div>
+      <p id="modalMsg">Please wait while we find the best deals for you.</p>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
